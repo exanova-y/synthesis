@@ -1,0 +1,1 @@
+// singular cat button for rest, listen and search states
