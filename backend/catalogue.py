@@ -57,3 +57,8 @@ fragrance_inventory = {
         }
     }
 }
+
+inventory_as_list = ["Rosemary", "Eucalyptus", "Bergamot", "Lemon", "Peppermint", 
+"Vanilla", "Cardamom", "Frankincense", "Sandalwood", "Patchouli", 
+"Lavender", "Gardenia", "Rose", "Jasmin", "Geranium",
+"Pine", "Cedarwood", "Oakmoss", "Black Pepper", "Cinnamon"]  
