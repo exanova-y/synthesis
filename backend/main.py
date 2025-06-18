@@ -11,11 +11,13 @@ setup_encoder()
 # --- routes ---
 @app.post('/match')
 def match(transcript: str):
+    print("from the match, beginning calculations")
     v_q = get_query_embeddings(transcript)
     v_e = get_catalog_embeddings(inventory_as_list)
     idx = most_similar_to(v_q, v_e)
     name = inventory_as_list[idx]
     description = fragrance_inventory[name]
+    print("we have calcualted it to be", name, description)
     return idx, name, description
 
 @app.post('/diffuse/{idx}')
