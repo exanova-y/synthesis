@@ -1,0 +1,8 @@
+Peppermint, Eucalyptus, Milk, Frankincense, Sandalwood, 
+Myrrh, Verbena, Thyme, Clary Sage, Tea Tree, 
+Cedarwood, Cinnamon, Lemongrass, Lemon, Bergamot,
+Rosemary, Sweet Orange, Grapefruit, Cypress, Passionfruit,
+Spearmint, Vanilla, Gardenia, Mugwort, Fir,
+Freesia, Osmanthus, White Tea, Orange Blossom,
+Geranium, Blueberry, Grape, Raspberry, Chamomile,
+Clove, Lavender, Green Tea, Pine, Jasmine
