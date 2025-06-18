@@ -5,6 +5,7 @@ import './App.css'
 function App() {
   const [transcript, setTranscript] = useState('')
 
+  async function handleTranscript(transcript) {
   return (
     <div className="app-container">
       <header>
