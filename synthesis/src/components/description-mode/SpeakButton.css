@@ -1,0 +1,108 @@
+.speak-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.speak-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 200px;
+  border: none;
+  border-radius: 16px;
+  padding: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* State-specific styles */
+.speak-button--ready {
+  background: linear-gradient(135deg, #f9f4d9 0%, #f7e8ff 100%);
+}
+
+.speak-button--recording {
+  background: linear-gradient(135deg, #e0f7ff 0%, #e9d9ff 100%);
+  animation: pulse 1.5s infinite alternate;
+}
+
+.speak-button--complete {
+  background: linear-gradient(135deg, #f0e6ff 0%, #ffecd9 100%);
+}
+
+.speak-button--error {
+  border: 2px solid #ff6b6b;
+}
+
+/* Cat image placeholder - replace with actual image */
+.cat-image {
+  width: 80px;
+  height: 80px;
+  background-color: #8a65c9;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  position: relative;
+  /* Add cat image as background or use mask */
+}
+
+.button-text {
+  font-size: 1rem;
+  text-align: center;
+  max-width: 250px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Listening animation */
+.listening-animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.listening-animation::before {
+  content: '';
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+  animation: ripple 2s infinite;
+}
+
+.speak-button__error {
+  color: #ff6b6b;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.03);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
