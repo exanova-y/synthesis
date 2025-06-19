@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 
 from embedding import setup_encoder, get_query_embeddings, get_catalog_embeddings, most_similar_to
-from catalogue import fragrance_inventory, inventory_as_list
+from catalogue import flat_fragrance_inventory, inventory_as_list
 
 ### setup 
 app = FastAPI()
@@ -45,7 +45,7 @@ async def match(http_request: Request):
         print("Finding most similar...")
         idx = most_similar_to(v_q, v_e)
         name = inventory_as_list[idx]
-        description = fragrance_inventory[name]
+        description = flat_fragrance_inventory[name]
         print(f"Match found: {name} - {description}")
         return {"idx": idx, "name": name, "description": description}
     except Exception as e:
