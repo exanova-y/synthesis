@@ -8,11 +8,10 @@ def setup_encoder():
     # run this first before other functions.
     load_dotenv() # this is needed to use the actual getenv function
     client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-    print("client", type(client))
-    print(os.getenv("OPENAI_API_KEY"))
     return client
 
 def get_catalog_embeddings(client, oils: list[str]):
+    # passing in client! because it's not global scope
     # batch processing a list
     response = client.embeddings.create(
         model="text-embedding-3-small",

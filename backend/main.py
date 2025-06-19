@@ -4,26 +4,25 @@ from fastapi.middleware.cors import CORSMiddleware
 from embedding import setup_encoder, get_query_embeddings, get_catalog_embeddings, most_similar_to
 from catalogue import flat_fragrance_inventory, inventory_as_list
 
-### setup 
+# setup
 app = FastAPI()
 origins = ["http://localhost", "http://localhost:5173", "http://127.0.0.1:5173"]
 # very important! allow requests from the vite dev-server (http://localhost:5173)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # adjust or set ["*"] during dev
+    allow_origins=origins, 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-print("=====================")
 print("setting up encoder")
-print("=====================")
 client = setup_encoder()
+v_e = get_catalog_embeddings(client, inventory_as_list)
 
 # put any class definitions here, but there aren't any atm.
 
-### routes
+
+# routes
 @app.get('/')
 async def root():
     """Health check endpoint"""
@@ -37,12 +36,7 @@ async def match(http_request: Request):
         body = await http_request.json()
         transcript = body["text"]
         print(f"Processing transcript: {transcript}")
-        
-        print("Getting query embeddings...")
         v_q = get_query_embeddings(client, transcript)
-        print("Getting catalog embeddings...")
-        v_e = get_catalog_embeddings(client, inventory_as_list)
-        print("Finding most similar...")
         idx = most_similar_to(v_q, v_e)
         name = inventory_as_list[idx]
         description = flat_fragrance_inventory[name]
