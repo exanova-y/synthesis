@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
-const SpeakButton = () => {
+const SpeakButton = ({ onLive, onFinal }) => {
   const {
     transcript,
     listening,
     resetTranscript,
     browserSupportsSpeechRecognition
   } = useSpeechRecognition();
+
+  // push live transcript up for display
+  useEffect(() => {
+    if (onLive && transcript) onLive(transcript);
+  }, [transcript, onLive]);
+
+  // when microphone stops listening, emit final transcript once
+  useEffect(() => {
+    if (!listening && transcript && onFinal) {
+      onFinal(transcript);
+    }
+  }, [listening, transcript, onFinal]);
 
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;

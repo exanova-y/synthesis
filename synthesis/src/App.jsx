@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import SpeakButton from './components/description-mode/SpeakButton'
+import SpeechRecognition from 'react-speech-recognition'
 import './App.css'
 import { returnMostSimilarScent } from './api';
 
@@ -7,11 +8,18 @@ function App() {
   const [transcript, setTranscript] = useState('')
   const [match, setMatch] = useState(null);
 
-  async function handleTranscript(transcript) {
-    console.log("begin handleTranscript");``
-    const match = await returnMostSimilarScent(transcript);
+  // called once recording finishes
+  async function handleFinalTranscript(finalText) {
+    setTranscript(finalText);
+    console.log("begin handleTranscript");
+    const match = await returnMostSimilarScent(finalText);
+    console.log("match", match);
     setMatch(match);
-    return match;
+  }
+
+  // live update for UI only
+  function handleLiveTranscript(live) {
+    setTranscript(live);
   }
 
     return (
@@ -21,7 +29,7 @@ function App() {
       </header>
 
       <main>
-        <SpeakButton onTranscript={handleTranscript} />
+        <SpeakButton onLive={handleLiveTranscript} onFinal={handleFinalTranscript} />
         {transcript && (
           <div className="transcript">
             <p>Live Transcript: {transcript}</p>
