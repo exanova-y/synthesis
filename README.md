@@ -1,4 +1,5 @@
 ## Screenshots
+Test it: https://synthesis-nine.vercel.app/
 
 [Demo video](https://www.loom.com/share/5cf0ffa06f204db3a60c8b4782dba441?sid=8cae6fcf-866e-4956-9ad7-107cabab9c9c)
 
