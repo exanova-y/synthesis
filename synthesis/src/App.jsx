@@ -25,17 +25,14 @@ function App() {
     return (
     <div className="app-container">
       <header>
-        <h1>Test Speak Button</h1>
+        <h1>Describe a scent!</h1>
       </header>
 
       <main>
         <SpeakButton onLive={handleLiveTranscript} onFinal={handleFinalTranscript} />
         {transcript && (
-          <div className="transcript">
-            <p>Live Transcript: {transcript}</p>
-          </div>
+          <p>Live Transcript: {transcript}</p>
         )}
-
         {match && (
           <div className="match">
             <p>Matched smell: {match.name}</p>

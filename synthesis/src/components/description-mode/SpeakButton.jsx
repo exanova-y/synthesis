@@ -31,7 +31,6 @@ const SpeakButton = ({ onLive, onFinal }) => {
       <button onClick={SpeechRecognition.startListening}>Start</button>
       <button onClick={SpeechRecognition.stopListening}>Stop</button>
       <button onClick={resetTranscript}>Reset</button>
-      <p>{transcript}</p>
     </div>
   );
 };

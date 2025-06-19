@@ -38,7 +38,8 @@ def most_similar_to(v_query: np.ndarray, v_embeddings: np.ndarray):
     # the vectors have already been normalized, and the denominator collapses to 1
     # this leaves us with just cosine similarity
     similarity_vector = np.dot(v_query, v_embeddings.T)
-    max_similarity_index = np.argmax(similarity_vector)
+    np_max_similarity_index = np.argmax(similarity_vector)
+    max_similarity_index = int(np_max_similarity_index)  # cast numpy.int64 to plain int for JSON serialization
     return max_similarity_index
 
 if __name__ == "__main__":
