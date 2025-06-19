@@ -25,7 +25,7 @@ def get_catalog_embeddings(client, oils: list[str]):
 def get_query_embeddings(client, text: str):
     # batch processing a list
     response = client.embeddings.create(
-        model="text-embedding-ada-002",
+        model="text-embedding-3-small",
         input=text,
         encoding_format="float"
     )   
