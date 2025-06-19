@@ -8,9 +8,11 @@ def setup_encoder():
     # run this first before other functions.
     load_dotenv() # this is needed to use the actual getenv function
     client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    print("client", type(client))
+    print(os.getenv("OPENAI_API_KEY"))
     return client
 
-def get_catalog_embeddings(oils: list[str]):
+def get_catalog_embeddings(client, oils: list[str]):
     # batch processing a list
     response = client.embeddings.create(
         model="text-embedding-3-small",
@@ -21,7 +23,7 @@ def get_catalog_embeddings(oils: list[str]):
     return response_vectors
     
 
-def get_query_embeddings(text: str):
+def get_query_embeddings(client, text: str):
     # batch processing a list
     response = client.embeddings.create(
         model="text-embedding-ada-002",
@@ -41,7 +43,7 @@ def most_similar_to(v_query: np.ndarray, v_embeddings: np.ndarray):
 
 if __name__ == "__main__":
     client = setup_encoder()
-    catalog_embeddings = get_catalog_embeddings(inventory_as_list)
-    query_embedding = get_query_embeddings("polar bear")
+    catalog_embeddings = get_catalog_embeddings(client, inventory_as_list)
+    query_embedding = get_query_embeddings(client, "polar bear")
     max_similarity_index = most_similar_to(query_embedding, catalog_embeddings)
     print(max_similarity_index, "the item is", inventory_as_list[max_similarity_index-1]) # 0-indexing.
