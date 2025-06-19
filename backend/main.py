@@ -1,6 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from fastapi import Request
+
 from embedding import setup_encoder, get_query_embeddings, get_catalog_embeddings, most_similar_to
 from catalogue import fragrance_inventory, inventory_as_list
 
@@ -21,15 +22,18 @@ setup_encoder()
 
 ### routes
 @app.post('/match')
-async def match(transcript: str):
-    print("from the match, beginning scalculations")
+async def match(http_request: Request):
+    """Return the most similar scent to the spoken description"""
+    body = await http_request.json() # stop here, and continue to run only if we have the request body
+    transcript = body["text"]
+    print("from /match, beginning calculations")
     v_q = get_query_embeddings(transcript)
     v_e = get_catalog_embeddings(inventory_as_list)
     idx = most_similar_to(v_q, v_e)
     name = inventory_as_list[idx]
     description = fragrance_inventory[name]
-    print("we have calculated it to be", name, description)
-    return idx, name, description
+    print("calculated", name, description)
+    return {"idx": idx, "name": name, "description": description}
 
 @app.post('/diffuse/{idx}')
 async def diffuse(idx: int):
