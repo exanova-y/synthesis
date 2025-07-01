@@ -34,18 +34,20 @@ export default function ThreeDGraph({ nodeCount = 100 }) {
   const graphData = useMemo(() => genRandomTree(nodeCount), [nodeCount]);
 
   return (
-    <ForceGraphVR
-      graphData={graphData}
-      nodeThreeObject={({ id }) =>
-        new THREE.Mesh(
-          geometries[id % geometries.length](),
-          new THREE.MeshLambertMaterial({
-            color: Math.round(Math.random() * 2 ** 24),
-            transparent: true,
-            opacity: 0.75
-          })
-        )
-      }
-    />
+    <div className="graph-fullscreen">
+      <ForceGraphVR
+        graphData={graphData}
+        nodeThreeObject={({ id }) =>
+          new THREE.Mesh(
+            geometries[id % geometries.length](),
+            new THREE.MeshLambertMaterial({
+              color: Math.round(Math.random() * 2 ** 24),
+              transparent: true,
+              opacity: 0.75
+            })
+          )
+        }
+      />
+    </div>
   );
 }
