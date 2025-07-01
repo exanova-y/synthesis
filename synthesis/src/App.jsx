@@ -3,6 +3,8 @@ import SpeakButton from './components/description-mode/SpeakButton'
 import SpeechRecognition from 'react-speech-recognition'
 import './App.css'
 import { returnMostSimilarScent } from './api';
+import ThreeDGraph from './components/3DGraph';
+
 
 function App() {
   const [transcript, setTranscript] = useState('')
@@ -39,6 +41,7 @@ function App() {
             <p>Description: {match.description}</p>
           </div>
         )}
+        <ThreeDGraph nodeCount={50} />
       </main>
     </div>
   )
