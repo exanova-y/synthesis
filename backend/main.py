@@ -4,6 +4,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from embedding import setup_encoder, get_query_embeddings, get_catalog_embeddings, most_similar_to
 from catalogue import flat_fragrance_inventory, inventory_as_list
 
+import time
+from koi_net.processor.knowledge_object import KnowledgeSource
+
 # setup
 app = FastAPI()
 origins = ["http://localhost", "http://localhost:5173", "http://127.0.0.1:5173"]
@@ -18,9 +21,7 @@ app.add_middleware(
 print("setting up encoder")
 client = setup_encoder()
 v_e = get_catalog_embeddings(client, inventory_as_list)
-
 # put any class definitions here, but there aren't any atm.
-
 
 # routes
 @app.get('/')
@@ -58,3 +59,14 @@ async def diffuse(idx: int):
 if __name__ == '__main__':
     import uvicorn
     uvicorn.run(app, host='127.0.0.1', port=8000)
+
+    try:
+        while True:
+            for event in node.network.poll_neighbors():
+                node.processor.handle(event=event, source=KnowledgeSource.External)
+            node.processor.flush_kobj_queue()
+            
+            time.sleep(5)
+            
+    finally:
+        node.stop()

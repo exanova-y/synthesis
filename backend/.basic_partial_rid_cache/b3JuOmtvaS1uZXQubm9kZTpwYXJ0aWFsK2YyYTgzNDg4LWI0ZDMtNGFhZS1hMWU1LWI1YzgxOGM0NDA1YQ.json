@@ -1,0 +1,15 @@
+{
+  "manifest": {
+    "rid": "orn:koi-net.node:partial+f2a83488-b4d3-4aae-a1e5-b5c818c4405a",
+    "timestamp": "2025-07-01T23:37:38.495646Z",
+    "sha256_hash": "7ed7a8240dad2c41079cb735d2ae158ae0f3256fd8aea36a690a47a13ec7dd56"
+  },
+  "contents": {
+    "base_url": "http://127.0.0.1:8000/koi-net",
+    "node_type": "PARTIAL",
+    "provides": {
+      "event": [],
+      "state": []
+    }
+  }
+}

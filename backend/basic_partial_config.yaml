@@ -1,0 +1,16 @@
+server:
+  host: 127.0.0.1
+  port: 8000
+  path: /koi-net
+koi_net:
+  node_name: partial
+  node_rid: orn:koi-net.node:partial+f2a83488-b4d3-4aae-a1e5-b5c818c4405a
+  node_profile:
+    base_url: http://127.0.0.1:8000/koi-net
+    node_type: PARTIAL
+    provides:
+      event: []
+      state: []
+  cache_directory_path: .basic_partial_rid_cache
+  event_queues_path: basic_partial_event_queues.json
+  first_contact: http://127.0.0.1:8000/koi-net
