@@ -16,6 +16,8 @@ dist-ssr
 
 firmware/.pio/
 backend/__pycache__/
+backend/.venv/
+backend/.basic_partial_rid_cache
 
 
 # Editor directories and files
