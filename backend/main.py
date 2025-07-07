@@ -5,7 +5,7 @@ from embedding import setup_encoder, get_query_embeddings, get_catalog_embedding
 from catalogue import flat_fragrance_inventory, inventory_as_list
 
 import time
-from koi_net.processor.knowledge_object import KnowledgeSource
+#from koi_net.processor.knowledge_object import KnowledgeSource
 
 # setup
 app = FastAPI()
