@@ -1,13 +1,14 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import SpeakButton from '../components/description-mode/SpeakButton'
+import Navigation from '../components/Navigation'
 import { returnMostSimilarScent } from '../api'
 import './generateScents.css'
 
-function GenerateScents() {
+function GenerateScents({ sensorMode = false }) {
   const [transcript, setTranscript] = useState('')
   const [match, setMatch] = useState(null)
-  const navigate = useNavigate()
+  const location = useLocation()
 
   async function handleFinalTranscript(finalText) {
     setTranscript(finalText)
@@ -24,36 +25,38 @@ function GenerateScents() {
   return (
     <div className="generate-container">
       {/* Navigation buttons in top right */}
-      <nav className="top-nav">
-        <button onClick={() => navigate('/')} className="nav-button">
-          Home
-        </button>
-        <button onClick={() => navigate('/graph')} className="nav-button">
-          Explore graph
-        </button>
-        <button onClick={() => navigate('/sensor')} className="nav-button">
-          Connect to sensor
-        </button>
-        <button onClick={() => navigate('/diffuser')} className="nav-button">
-          Connect to diffuser
-        </button>
-      </nav>
+      <Navigation currentPath={location.pathname} />
 
       <div className="content">
         <header>
-          <h1>Describe a scent!</h1>
+          <h1>{sensorMode ? "Connect to Sensor" : "Describe a scent!"}</h1>
         </header>
 
         <main>
-          <SpeakButton onLive={handleLiveTranscript} onFinal={handleFinalTranscript} />
-          {transcript && (
-            <p>Live Transcript: {transcript}</p>
-          )}
-          {match && (
-            <div className="match">
-              <p>Matched smell: {match.name}</p>
-              <p>Description: {match.description}</p>
+          {sensorMode ? (
+            <div className="sensor-placeholder">
+              <p style={{color:'white', maxWidth:'500px', marginBottom: '2rem'}}>
+                This page will allow you to connect to your scent sensor device.
+                Integration coming soon.
+              </p>
+              <div className="sensor-status">
+                <div className="status-indicator offline"></div>
+                <span>Sensor Status: Offline</span>
+              </div>
             </div>
+          ) : (
+            <>
+              <SpeakButton onLive={handleLiveTranscript} onFinal={handleFinalTranscript} />
+              {transcript && (
+                <p>Live Transcript: {transcript}</p>
+              )}
+              {match && (
+                <div className="match">
+                  <p>Matched smell: {match.name}</p>
+                  <p>Description: {match.description}</p>
+                </div>
+              )}
+            </>
           )}
         </main>
       </div>

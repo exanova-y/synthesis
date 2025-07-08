@@ -1,10 +1,11 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import Navigation from '../components/Navigation';
 import './landing.css';
 
 const Landing = () => {
-  const navigate = useNavigate();
-
+  const location = useLocation();
+  
   return (
     <div className="landing-container" style={{
       backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), radial-gradient(at 50% 100%, rgba(128, 0, 128, 0.2), transparent), radial-gradient(at 50% 0%, rgba(0, 0, 255, 0.2), transparent)',
@@ -15,20 +16,7 @@ const Landing = () => {
       <div className="noise-overlay"></div>
       
       {/* Navigation buttons in top right */}
-      <nav className="top-nav">
-        <button onClick={() => navigate('/graph')} className="nav-button">
-          Explore graph
-        </button>
-        <button onClick={() => navigate('/generate')} className="nav-button">
-          Generate scents
-        </button>
-        <button onClick={() => navigate('/sensor')} className="nav-button">
-          Connect to sensor
-        </button>
-        <button onClick={() => navigate('/diffuser')} className="nav-button">
-          Connect to diffuser
-        </button>
-      </nav>
+      <Navigation currentPath={location.pathname} />
       
       {/* Main content */}
       <div className="content">
@@ -39,11 +27,11 @@ const Landing = () => {
         
         <div className="stats-card">
           <div className="stat">
-            <span className="stat-number">8 100</span>
+            <span className="stat-number">2,847</span>
             <span className="stat-label">Ingredients</span>
           </div>
           <div className="stat">
-            <span className="stat-number">8 392</span>
+            <span className="stat-number">8,392</span>
             <span className="stat-label">Connections</span>
           </div>
         </div>
@@ -51,14 +39,6 @@ const Landing = () => {
         <button className="launch-button">
           EXPLORE
         </button>
-        
-        <footer className="quote-section">
-          <blockquote>
-            "The most beautiful thing we can experience is the mysterious. 
-            It is the source of all true art and science."
-          </blockquote>
-          <cite>- Albert Einstein</cite>
-        </footer>
       </div>
     </div>
   );
