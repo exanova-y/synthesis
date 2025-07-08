@@ -20,11 +20,11 @@ const Landing = () => {
         
         <div className="stats-card">
           <div className="stat">
-            <span className="stat-number">2,847</span>
+            <span className="stat-number">150</span>
             <span className="stat-label">Ingredients</span>
           </div>
           <div className="stat">
-            <span className="stat-number">8,392</span>
+            <span className="stat-number">~300</span>
             <span className="stat-label">Connections</span>
           </div>
         </div>
