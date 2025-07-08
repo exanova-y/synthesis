@@ -1,36 +1,40 @@
 import { useState, useEffect } from 'react'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import SpeakButton from './components/description-mode/SpeakButton'
 import SpeechRecognition from 'react-speech-recognition'
 import './App.css'
-import { returnMostSimilarScent } from './api';
-import ThreeDGraph from './components/3DGraph';
+import { returnMostSimilarScent } from './api'
+import Landing from './pages/landing'
+import ThreeDGraph from './pages/3DGraph'
 
-
-function App() {
+// Synthesize page component
+function SynthesizePage() {
   const [transcript, setTranscript] = useState('')
-  const [match, setMatch] = useState(null);
+  const [match, setMatch] = useState(null)
+  const navigate = useNavigate()
 
-  // called once recording finishes
   async function handleFinalTranscript(finalText) {
-    setTranscript(finalText);
-    console.log("begin handleTranscript");
-    const match = await returnMostSimilarScent(finalText);
-    console.log("match", match);
-    setMatch(match);
+    setTranscript(finalText)
+    console.log("begin handleTranscript")
+    const match = await returnMostSimilarScent(finalText)
+    console.log("match", match)
+    setMatch(match)
   }
 
-  // live update for UI only
   function handleLiveTranscript(live) {
-    setTranscript(live);
+    setTranscript(live)
   }
 
-    return (
+  return (
     <div className="app-container">
       <header>
         <h1>Describe a scent!</h1>
       </header>
 
       <main>
+        <button onClick={() => navigate('/')}>Home</button>
+        <button onClick={() => navigate('/graph')}>Explore graph</button>
+        <button onClick={() => navigate('/synthesize')}>Synthesize</button>
         <SpeakButton onLive={handleLiveTranscript} onFinal={handleFinalTranscript} />
         {transcript && (
           <p>Live Transcript: {transcript}</p>
@@ -41,9 +45,18 @@ function App() {
             <p>Description: {match.description}</p>
           </div>
         )}
-        <ThreeDGraph nodeCount={50} />
       </main>
     </div>
+  )
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/graph" element={<ThreeDGraph />} />
+      <Route path="/synthesize" element={<SynthesizePage />} />
+    </Routes>
   )
 }
 
