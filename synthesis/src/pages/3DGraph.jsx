@@ -3,6 +3,7 @@ import 'aframe';
 import ForceGraphVR from 'react-force-graph-vr';
 import * as THREE from 'three';
 import nodes_with_colors from '../../../data-layer/nodes_with_colors.json';
+import './3DGraph.css';
 
 // Simple utility to generate a random tree similar to https://github.com/vasturiano/force-graph/blob/master/example/random-data.js
 function genRandomTree(n = 100) {
@@ -60,9 +61,14 @@ export default function ThreeDGraph() {
     <div className="graph-fullscreen">
       <ForceGraphVR
         graphData={graphData}
+        linkDistance={25}
+        nodeRelSize={6}
+        linkStrength={0.1}
+        linkDirectionalArrowLength={0}
+        linkDirectionalArrowRelPos={1}
         nodeThreeObject={(node) =>
           new THREE.Mesh(
-            new THREE.SphereGeometry(node.is_hub ? 8 : 5),
+            new THREE.SphereGeometry(node.is_hub ? 6 : 4),
             new THREE.MeshLambertMaterial({
               color: node.color,
               transparent: node.transparent,

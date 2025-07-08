@@ -1,49 +1,30 @@
-import { useState, useEffect } from 'react'
-import SpeakButton from './components/description-mode/SpeakButton'
-import SpeechRecognition from 'react-speech-recognition'
+import { Routes, Route } from 'react-router-dom'
+import Landing from './pages/landing'
+import ThreeDGraph from './pages/3DGraph'
+import GenerateScents from './pages/generateScents'
+import ConnectDiffuser from './pages/connectDiffuser'
 import './App.css'
-import { returnMostSimilarScent } from './api';
-import ThreeDGraph from './components/3DGraph';
-
 
 function App() {
-  const [transcript, setTranscript] = useState('')
-  const [match, setMatch] = useState(null);
-
-  // called once recording finishes
-  async function handleFinalTranscript(finalText) {
-    setTranscript(finalText);
-    console.log("begin handleTranscript");
-    const match = await returnMostSimilarScent(finalText);
-    console.log("match", match);
-    setMatch(match);
-  }
-
-  // live update for UI only
-  function handleLiveTranscript(live) {
-    setTranscript(live);
-  }
-
-    return (
-    <div className="app-container">
-      <header>
-        <h1>Describe a scent!</h1>
-      </header>
-
-      <main>
-        <SpeakButton onLive={handleLiveTranscript} onFinal={handleFinalTranscript} />
-        {transcript && (
-          <p>Live Transcript: {transcript}</p>
-        )}
-        {match && (
-          <div className="match">
-            <p>Matched smell: {match.name}</p>
-            <p>Description: {match.description}</p>
+  return (
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/graph" element={<ThreeDGraph />} />
+      <Route path="/generate" element={<GenerateScents />} />
+      <Route path="/sensor" element={<GenerateScents sensorMode={true} />} />
+      <Route path="/diffuser" element={<ConnectDiffuser />} />
+      <Route path="*" element={
+        <div className="landing-container">
+          <div className="content">
+            <h1 className="main-title">Page Not Found</h1>
+            <p style={{color:'white'}}>The page you're looking for doesn't exist.</p>
+            <button onClick={() => window.location.href='/'} className="launch-button">
+              Go Home
+            </button>
           </div>
-        )}
-        <ThreeDGraph nodeCount={50} />
-      </main>
-    </div>
+        </div>
+      } />
+    </Routes>
   )
 }
 

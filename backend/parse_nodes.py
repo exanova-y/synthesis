@@ -29,7 +29,8 @@ def load_categories(csv_path):
 
 def generate_category_colors():
     """Generate distinct colors for each food category"""
-    
+    # this is mostly gray for now, I need to fix it
+
     category_colors = {
         'Bakery/Dessert/Snack': '#FED7C3',      # Chocolate
         'Beverage Alcoholic': '#FFAEA5',        # Dark Red
@@ -112,20 +113,6 @@ def build_graph(nodes, edges):
         graph[source].append(target)
         graph[target].append(source)
     return graph
-
-# def calculate_distances(graph, start_node):
-#     """BFS to calculate shortest distances from start_node to all others"""
-#     distances = {start_node: 0}
-#     queue = [start_node]
-    
-#     while queue:
-#         current = queue.pop(0)
-#         for neighbor in graph[current]:
-#             if neighbor not in distances:
-#                 distances[neighbor] = distances[current] + 1
-#                 queue.append(neighbor)
-    
-#     return distances
 
 def main():
     # File paths
