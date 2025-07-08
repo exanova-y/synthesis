@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './landing.css';
 
 const Landing = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="landing-container" style={{
       backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), radial-gradient(at 50% 100%, rgba(128, 0, 128, 0.2), transparent), radial-gradient(at 50% 0%, rgba(0, 0, 255, 0.2), transparent)',
@@ -10,9 +13,27 @@ const Landing = () => {
       backgroundRepeat: 'repeat, no-repeat, no-repeat'
     }}>
       <div className="noise-overlay"></div>
+      
+      {/* Navigation buttons in top right */}
+      <nav className="top-nav">
+        <button onClick={() => navigate('/graph')} className="nav-button">
+          Explore graph
+        </button>
+        <button onClick={() => navigate('/generate')} className="nav-button">
+          Generate scents
+        </button>
+        <button onClick={() => navigate('/sensor')} className="nav-button">
+          Connect to sensor
+        </button>
+        <button onClick={() => navigate('/diffuser')} className="nav-button">
+          Connect to diffuser
+        </button>
+      </nav>
+      
+      {/* Main content */}
       <div className="content">
         <header className="hero-section">
-          <h1 className="title">Synthesis</h1>
+          <h1 className="main-title title">Synthesis</h1>
           <p className="subtitle">Generate new scents with words!</p>
         </header>
         
