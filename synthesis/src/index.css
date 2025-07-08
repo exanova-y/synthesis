@@ -42,7 +42,7 @@ body {
     radial-gradient(circle at 20% 80%, #2C0735 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, #858AE3 0%, transparent 50%),
     radial-gradient(circle at 50% 40%, #613DC1 0%, transparent 50%),
-    linear-gradient(135deg, #2C0735 0%, #4E148C 2%, transparent 100%);
+    linear-gradient(135deg, #2C0735 0%, #4E148C 100%, transparent 40%);
   background-repeat: no-repeat;
   background-position: 0% 0%, 100% 100%, 50% 50%, 0% 0%;
   background-attachment: fixed;
