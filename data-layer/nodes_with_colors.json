@@ -1,0 +1,1502 @@
+[
+  {
+    "id": 0,
+    "name": "1%_fat_buttermilk",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 1,
+    "name": "1%_fat_cottage_cheese",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 3,
+    "name": "10%_cream",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 4,
+    "name": "100%_bran",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 5,
+    "name": "10_inch_flour_tortilla",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 7,
+    "name": "12_inch_pizza_crust",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 9,
+    "name": "18%_table_cream",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 10,
+    "name": "2%_buttermilk",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 11,
+    "name": "2%_cheddar_cheese",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 12,
+    "name": "2%_evaporated_milk",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 13,
+    "name": "2%_fat_cottage_cheese",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 15,
+    "name": "2%_milk",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 16,
+    "name": "2%_mozzarella_cheese",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 17,
+    "name": "35%_cream",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 18,
+    "name": "6_inch_corn_tortilla",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 19,
+    "name": "6_inch_flour_tortilla",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 20,
+    "name": "7_up",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 22,
+    "name": "80%_lean_ground_beef",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 23,
+    "name": "85%_lean_ground_beef",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 24,
+    "name": "8_inch_flour_tortilla",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 25,
+    "name": "9\"_pastry_pie_shell",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 26,
+    "name": "9\"_unbaked_pie_shell",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 27,
+    "name": "90%_lean_ground_beef",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 28,
+    "name": "93%_lean_ground_beef",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 29,
+    "name": "95%_lean_ground_beef",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 30,
+    "name": "96%_lean_ground_beef",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 31,
+    "name": "98%_fat_free_cream_of_chicken_soup",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 32,
+    "name": "98%_fat_free_cream_of_mushroom_soup",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 33,
+    "name": "9_inch_baked_pie_crust",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 34,
+    "name": "9_inch_deep_dish_pie_crust",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 35,
+    "name": "9_inch_graham_cracker_crust",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 36,
+    "name": "9_inch_pie_shell",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 37,
+    "name": "a.1._original_sauce",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 38,
+    "name": "abalone",
+    "node_type": "ingredient",
+    "is_hub": true,
+    "category": "Seafood",
+    "color": "#C6DBDA",
+    "transparent": true,
+    "opacity": 0.85
+  },
+  {
+    "id": 39,
+    "name": "absinthe",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 40,
+    "name": "absolut_citron_vodka",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 44,
+    "name": "achiote",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 45,
+    "name": "achiote_oil",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 46,
+    "name": "achiote_paste",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 47,
+    "name": "achiote_powder",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 49,
+    "name": "acini_di_pepe_pasta",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 50,
+    "name": "acorn",
+    "node_type": "ingredient",
+    "is_hub": true,
+    "category": "Nut/Seed",
+    "color": "#A0522D",
+    "transparent": true,
+    "opacity": 0.85
+  },
+  {
+    "id": 51,
+    "name": "acorn_squash",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 52,
+    "name": "active_dry_yeast",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Fungus",
+    "color": "#8FBC8F",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 53,
+    "name": "active_starter",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 54,
+    "name": "adobo_sauce",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 55,
+    "name": "adobo_seasoning",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 56,
+    "name": "advocaat",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 57,
+    "name": "adzuki_bean",
+    "node_type": "ingredient",
+    "is_hub": true,
+    "category": "Cereal/Crop/Bean",
+    "color": "#97C1A9",
+    "transparent": true,
+    "opacity": 0.85
+  },
+  {
+    "id": 58,
+    "name": "agar",
+    "node_type": "ingredient",
+    "is_hub": true,
+    "category": "Plant/Vegetable",
+    "color": "#CCE2CB",
+    "transparent": true,
+    "opacity": 0.85
+  },
+  {
+    "id": 59,
+    "name": "agar_agar",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 60,
+    "name": "agar_agar_flake",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 61,
+    "name": "agave",
+    "node_type": "ingredient",
+    "is_hub": true,
+    "category": "Plant/Vegetable",
+    "color": "#DDF3DC",
+    "transparent": true,
+    "opacity": 0.85
+  },
+  {
+    "id": 62,
+    "name": "agave_nectar",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 63,
+    "name": "agave_syrup",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 64,
+    "name": "aged_cheddar_cheese",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 65,
+    "name": "aged_white_cheddar_cheese",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 66,
+    "name": "ahi",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 67,
+    "name": "ahi_tuna_steak",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 68,
+    "name": "aioli",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 69,
+    "name": "ajinomoto",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 70,
+    "name": "ajwain",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 71,
+    "name": "albacore_tuna",
+    "node_type": "ingredient",
+    "is_hub": true,
+    "category": "Seafood",
+    "color": "#D7ECEB",
+    "transparent": true,
+    "opacity": 0.85
+  },
+  {
+    "id": 72,
+    "name": "albacore_tuna_in_water",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 73,
+    "name": "alcaparrado",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 74,
+    "name": "alcohol",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 75,
+    "name": "ale",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 76,
+    "name": "aleppo_pepper",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 77,
+    "name": "alfalfa",
+    "node_type": "ingredient",
+    "is_hub": true,
+    "category": "Plant/Vegetable",
+    "color": "#EF04ED",
+    "transparent": true,
+    "opacity": 0.85
+  },
+  {
+    "id": 78,
+    "name": "alfalfa_sprout",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 79,
+    "name": "alfredo_sauce",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 80,
+    "name": "alfredo_sauce_mix",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 81,
+    "name": "all_bran_cereal",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 82,
+    "name": "all_purpose_flour",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Cereal/Crop/Bean",
+    "color": "#A8D2BA",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 83,
+    "name": "all_purpose_greek_seasoning",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 84,
+    "name": "all_purpose_white_flour",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 85,
+    "name": "alligator_meat",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 86,
+    "name": "allspice",
+    "node_type": "ingredient",
+    "is_hub": true,
+    "category": "Spice",
+    "color": "#FF4500",
+    "transparent": true,
+    "opacity": 0.85
+  },
+  {
+    "id": 87,
+    "name": "allspice_berry",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 88,
+    "name": "almond",
+    "node_type": "ingredient",
+    "is_hub": true,
+    "category": "Nut/Seed",
+    "color": "#B1633E",
+    "transparent": true,
+    "opacity": 0.85
+  },
+  {
+    "id": 89,
+    "name": "almond_bark",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 90,
+    "name": "almond_biscotti",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 91,
+    "name": "almond_brickle_chip",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 92,
+    "name": "almond_butter",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 93,
+    "name": "almond_essence",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 94,
+    "name": "almond_extract",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Nut/Seed",
+    "color": "#C2744F",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 95,
+    "name": "almond_filling",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 96,
+    "name": "almond_flavored_liqueur",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 97,
+    "name": "almond_flavoring",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 98,
+    "name": "almond_flour",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 99,
+    "name": "almond_half",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 100,
+    "name": "almond_liqueur",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 101,
+    "name": "almond_macaroon",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 102,
+    "name": "almond_meal",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 103,
+    "name": "almond_milk",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 104,
+    "name": "almond_oil",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 105,
+    "name": "almond_paste",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 106,
+    "name": "almond_powder",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 107,
+    "name": "almond_syrup",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 108,
+    "name": "almond_toffee_bit",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 110,
+    "name": "alphabet_pasta",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 111,
+    "name": "alum",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 112,
+    "name": "aluminum_foil",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 113,
+    "name": "aluminum_free_baking_powder",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 114,
+    "name": "amaranth",
+    "node_type": "ingredient",
+    "is_hub": true,
+    "category": "Flower",
+    "color": "#F3B0C3",
+    "transparent": true,
+    "opacity": 0.85
+  },
+  {
+    "id": 115,
+    "name": "amaranth_flour",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 116,
+    "name": "amaretti",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 117,
+    "name": "amaretti_cooky",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 118,
+    "name": "amaretto",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 119,
+    "name": "amaretto_cooky",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 120,
+    "name": "amaretto_liqueur",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 121,
+    "name": "amarula_cream_liqueur",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 122,
+    "name": "amber_beer",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 123,
+    "name": "amber_rum",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 124,
+    "name": "amchoor_powder",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 125,
+    "name": "amchur_powder",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 126,
+    "name": "american_cheese",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 127,
+    "name": "amish_starter",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 128,
+    "name": "ammonia",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 129,
+    "name": "anaheim_chili",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 130,
+    "name": "anaheim_chilies",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 131,
+    "name": "anasazi_bean",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 132,
+    "name": "ancho_chili",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 133,
+    "name": "ancho_chilies",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 134,
+    "name": "anchovies_packed_in_oil",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 135,
+    "name": "anchovy",
+    "node_type": "ingredient",
+    "is_hub": true,
+    "category": "Seafood",
+    "color": "#E8FDFC",
+    "transparent": true,
+    "opacity": 0.85
+  },
+  {
+    "id": 136,
+    "name": "anchovy_fillet",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 137,
+    "name": "anchovy_paste",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 138,
+    "name": "andes_mints_candy",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 139,
+    "name": "andouille_sausage",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 140,
+    "name": "anejo_cheese",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 141,
+    "name": "angel_flake_coconut",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 142,
+    "name": "angel_food_cake",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 143,
+    "name": "angel_food_cake_mix",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 144,
+    "name": "angel_hair_pasta",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 145,
+    "name": "angelica",
+    "node_type": "ingredient",
+    "is_hub": true,
+    "category": "Plant/Vegetable",
+    "color": "#CCE2CB",
+    "transparent": true,
+    "opacity": 0.85
+  },
+  {
+    "id": 146,
+    "name": "angostura_bitter",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 147,
+    "name": "animal_cracker",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 148,
+    "name": "anise",
+    "node_type": "ingredient",
+    "is_hub": true,
+    "category": "Spice",
+    "color": "#105612",
+    "transparent": true,
+    "opacity": 0.85
+  },
+  {
+    "id": 149,
+    "name": "anise_extract",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 150,
+    "name": "anise_flavored_liqueur",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 151,
+    "name": "anise_flavoring",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 152,
+    "name": "anise_oil",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 153,
+    "name": "anise_seed",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 154,
+    "name": "anisette",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 155,
+    "name": "anjou_pear",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#808080",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 156,
+    "name": "annatto_oil",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#919191",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 157,
+    "name": "annatto_seed",
+    "node_type": "ingredient",
+    "is_hub": false,
+    "category": "Other",
+    "color": "#A2A2A2",
+    "transparent": true,
+    "opacity": 0.75
+  },
+  {
+    "id": 158,
+    "name": "apple",
+    "node_type": "ingredient",
+    "is_hub": true,
+    "category": "Fruit",
+    "color": "#ECDFE3",
+    "transparent": true,
+    "opacity": 0.85
+  },
+  {
+    "id": 159,
+    "name": "apple_brandy",
+    "node_type": "ingredient",
+    "is_hub": true,
+    "category": "Beverage Alcoholic",
+    "color": "#FFAEA5",
+    "transparent": true,
+    "opacity": 0.85
+  }
+]

@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import 'aframe';
 import ForceGraphVR from 'react-force-graph-vr';
 import * as THREE from 'three';
+import nodes_with_colors from '../../../data-layer/nodes_with_colors.json';
 
 // Simple utility to generate a random tree similar to https://github.com/vasturiano/force-graph/blob/master/example/random-data.js
 function genRandomTree(n = 100) {
@@ -27,26 +28,49 @@ const geometries = [
 
 // VRGraph component
 // --------------------------------------------------
-// Renders an interactive force-directed graph in WebXR/VR.
-// Add <VRGraph /> anywhere in your JSX and make sure the canvas
-// can take up the full viewport (e.g. via CSS).
-export default function ThreeDGraph({ nodeCount = 100 }) {
-  const graphData = useMemo(() => genRandomTree(nodeCount), [nodeCount]);
+// Renders an interactive force-directed graph in WebXR/VR using real ingredient data
+export default function ThreeDGraph() {
+  const graphData = useMemo(() => {
+    // Convert our nodes data to the format expected by ForceGraphVR
+    const nodes = nodes_with_colors.map(node => ({
+      id: node.id,
+      name: node.name,
+      category: node.category,
+      color: node.color,
+      transparent: node.transparent,
+      opacity: node.opacity,
+      is_hub: node.is_hub
+    }));
+
+    // Create some basic links between nodes (you can enhance this with actual edge data)
+    const links = [];
+    for (let i = 0; i < nodes.length - 1; i++) {
+      if (Math.random() < 0.1) { // 10% chance of connection
+        links.push({
+          source: nodes[i].id,
+          target: nodes[i + 1].id
+        });
+      }
+    }
+
+    return { nodes, links };
+  }, []);
 
   return (
     <div className="graph-fullscreen">
       <ForceGraphVR
         graphData={graphData}
-        nodeThreeObject={({ id }) =>
+        nodeThreeObject={(node) =>
           new THREE.Mesh(
-            geometries[id % geometries.length](),
+            new THREE.SphereGeometry(node.is_hub ? 8 : 5),
             new THREE.MeshLambertMaterial({
-              color: Math.round(Math.random() * 2 ** 24),
-              transparent: true,
-              opacity: 0.75
+              color: node.color,
+              transparent: node.transparent,
+              opacity: node.opacity
             })
           )
         }
+        nodeLabel={(node) => `${node.name} (${node.category})`}
       />
     </div>
   );

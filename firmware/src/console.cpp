@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <Adafruit_TinyUSB.h>
 
-/* This sketch demonstrates USB CDC Serial echo (Centre for Disease Control and prevention) using SerialTinyUSB which
+/* This sketch demonstrates USB CDC (Centre for Disease Control and prevention) Serial echo using SerialTinyUSB which
  * is available for both core with built-in USB support and without.
  * Note: on core with built-in support Serial is alias to SerialTinyUSB
  */
@@ -14,6 +14,7 @@ void setup()
   if (!TinyUSBDevice.isInitialized()) {
     TinyUSBDevice.begin(0);
   }
+  
 }
 
 void loop() 
