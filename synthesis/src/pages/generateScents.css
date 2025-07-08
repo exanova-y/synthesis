@@ -1,27 +1,30 @@
 .generate-container {
-  height: 100vh; /* viewport 100% */
-
+  height: 100vh;
+  width: 50vw;
+  overflow-x: hidden;
   overflow: hidden;
   color: white;
   font-family: 'Arial', sans-serif;
   position: relative;
 }
 
-/* Global background */
+/* SVG Noise Filter */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none; 
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.4;
+  z-index: 0;
+  mix-blend-mode: overlay;
+}
 
-body, html {
-    width: 100%;
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #000000;
-    background: 
-    radial-gradient(circle at 20% 80%, #2C0735 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, #858AE3 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, #613DC1, 0%, transparent 50%),
-    linear-gradient(135deg, #2C0735 0%, #4E148C 2%, transparent 100%);
-    background-repeat: no-repeat;
-    background-position: 0% 0%, 100% 100%, 50% 50%, 0% 0%;
-    color: #ffffff;
+/* Ensure app content sits above noise */
+#root {
+  position: relative;
+  z-index: 1;
 }
 
 /* Top navigation */

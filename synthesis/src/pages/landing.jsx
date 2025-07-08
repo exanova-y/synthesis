@@ -7,14 +7,7 @@ const Landing = () => {
   const location = useLocation();
   
   return (
-    <div className="landing-container" style={{
-      backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), radial-gradient(at 50% 100%, rgba(128, 0, 128, 0.2), transparent), radial-gradient(at 50% 0%, rgba(0, 0, 255, 0.2), transparent)',
-      backgroundSize: '100% 300px, 200px 200px, 200px 200px',
-      backgroundPosition: '0% 0%, 50% 100%, 50% 0%',
-      backgroundRepeat: 'repeat, no-repeat, no-repeat'
-    }}>
-      <div className="noise-overlay"></div>
-      
+    <div className="landing-container">
       {/* Navigation buttons in top right */}
       <Navigation currentPath={location.pathname} />
       
@@ -35,10 +28,7 @@ const Landing = () => {
             <span className="stat-label">Connections</span>
           </div>
         </div>
-        
-        <button className="launch-button">
-          EXPLORE
-        </button>
+
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ import './generateScents.css'
 function GenerateScents({ sensorMode = false }) {
   const [transcript, setTranscript] = useState('')
   const [match, setMatch] = useState(null)
-  const location = useLocation()
+  const location = useLocation() // page, not geographic location.
 
   async function handleFinalTranscript(finalText) {
     setTranscript(finalText)
