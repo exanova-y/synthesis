@@ -1,26 +1,13 @@
 import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import SpeakButton from '../components/description-mode/SpeakButton'
 import Navigation from '../components/Navigation'
-import { returnMostSimilarScent } from '../api'
+import CraftingTable from '../components/CraftingTable'
+import VoiceToScent from '../components/VoiceToScent'
 import './generateScents.css'
 
 function GenerateScents({ sensorMode = false }) {
-  const [transcript, setTranscript] = useState('')
-  const [match, setMatch] = useState(null)
-  const location = useLocation() // page, not geographic location.
-
-  async function handleFinalTranscript(finalText) {
-    setTranscript(finalText)
-    console.log("begin handleTranscript")
-    const match = await returnMostSimilarScent(finalText)
-    console.log("match", match)
-    setMatch(match)
-  }
-
-  function handleLiveTranscript(live) {
-    setTranscript(live)
-  }
+  const [activeMode, setActiveMode] = useState('craft') // 'craft', 'voice', 'sensor'
+  const location = useLocation()
 
   return (
     <div className="generate-container">
@@ -29,11 +16,40 @@ function GenerateScents({ sensorMode = false }) {
 
       <div className="content">
         <header>
-          <h1>{sensorMode ? "Connect to Sensor" : "Describe a scent!"}</h1>
+          <div className="mode-selector">
+            <button 
+              onClick={() => setActiveMode('craft')}
+              className={`mode-btn ${activeMode === 'craft' ? 'active' : ''}`}
+            >
+              Craft Scents
+            </button>
+
+
+            <button 
+              onClick={() => setActiveMode('voice')}
+              className={`mode-btn ${activeMode === 'voice' ? 'active' : ''}`}
+            >
+              Voice to Scent
+            </button>
+
+
+            {/* {sensorMode && (
+              <button 
+                onClick={() => setActiveMode('sensor')}
+                className={`mode-btn ${activeMode === 'sensor' ? 'active' : ''}`}
+              >
+                Connect Sensor
+              </button>
+            )} */}
+          </div>
         </header>
 
         <main>
-          {sensorMode ? (
+          {activeMode === 'craft' && <CraftingTable />}
+          
+          {activeMode === 'voice' && <VoiceToScent />}
+          
+          {/* {activeMode === 'sensor' && sensorMode && (
             <div className="sensor-placeholder">
               <p style={{color:'white', maxWidth:'500px', marginBottom: '2rem'}}>
                 This page will allow you to connect to your scent sensor device.
@@ -44,20 +60,7 @@ function GenerateScents({ sensorMode = false }) {
                 <span>Sensor Status: Offline</span>
               </div>
             </div>
-          ) : (
-            <>
-              <SpeakButton onLive={handleLiveTranscript} onFinal={handleFinalTranscript} />
-              {transcript && (
-                <p>Live Transcript: {transcript}</p>
-              )}
-              {match && (
-                <div className="match">
-                  <p>Matched smell: {match.name}</p>
-                  <p>Description: {match.description}</p>
-                </div>
-              )}
-            </>
-          )}
+          )} */}
         </main>
       </div>
     </div>

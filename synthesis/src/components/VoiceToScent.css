@@ -1,0 +1,115 @@
+.describe-scent {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.describe-scent header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.describe-scent h2 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.describe-scent p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+}
+
+.describe-scent main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.transcript-display {
+  width: 100%;
+  max-width: 600px;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.transcript-display h3 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.transcript-display p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.match-result {
+  width: 100%;
+  max-width: 600px;
+}
+
+.match-result h3 {
+  color: white;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.match-card {
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.match-card h4 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.match-card p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.match-card strong {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .describe-scent {
+    padding: 1rem;
+  }
+  
+  .describe-scent h2 {
+    font-size: 2rem;
+  }
+  
+  .transcript-display,
+  .match-result {
+    max-width: 100%;
+  }
+  
+  .match-card {
+    padding: 1.5rem;
+  }
+}

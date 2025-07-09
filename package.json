@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "aframe": "^1.7.1",
+    "lucide-react": "^0.525.0",
     "react-force-graph-vr": "^2.0.2",
     "three": "^0.178.0"
   }
