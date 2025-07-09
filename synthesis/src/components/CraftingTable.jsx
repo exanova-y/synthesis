@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Sparkles, Thermometer, Droplets } from 'lucide-react';
+import './CraftingTable.css';
 
-const ScentAttributeSelector = () => {
+const CraftingTable = () => {
   const fragranceInventory = {
     "Rosemary": { temp: "cool", category: "fresh", subcategory: "aromatic" },
     "Eucalyptus": { temp: "cool", category: "fresh", subcategory: "aromatic" },
@@ -208,49 +209,45 @@ const ScentAttributeSelector = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white">
+    <div className="crafting-table-container">
       <div className="max-w-6xl mx-auto p-8">
-        <h1 className="text-4xl font-bold text-center mb-2">Select Scent Attributes</h1>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <h2>Select Scent Attributes</h2>
+        <p>Choose scent attributes to craft your perfect fragrance:</p>
+
+        <div className="main-grid">
           {/* Left Column - Attributes */}
-          <div className="lg:col-span-2">
-            <div className="grid grid-cols-6 gap-4 mb-8">
+          <div>
+            <div className="attribute-grid">
               {attributes.map((attr) => (
                 <button
                   key={attr.id}
                   onClick={() => toggleAttribute(attr.id)}
-                  className={`p-4 rounded-lg border-2 transition-all hover:scale-105 flex flex-col items-center justify-center min-h-[80px] ${
-                    selectedAttributes.includes(attr.id)
-                      ? 'bg-purple-600 border-purple-400 text-white'
-                      : 'bg-purple-800 border-purple-600 text-purple-200 hover:bg-purple-700'
+                  className={`attribute-button ${
+                    selectedAttributes.includes(attr.id) ? 'selected' : ''
                   }`}
                 >
-                  <div className="text-2xl mb-1">{attr.icon}</div>
-                  <div className="text-xs font-medium">{attr.label}</div>
+                  <div className="attribute-icon">{attr.icon}</div>
+                  <div className="attribute-label">{attr.label}</div>
                 </button>
               ))}
             </div>
 
             {/* Temperature Slider */}
-            <div className="mb-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Thermometer className="text-purple-300" size={20} />
-                <span className="text-lg font-medium">Temperature</span>
+            <div className="slider-section">
+              <div className="slider-header">
+                <Thermometer className="slider-icon" size={20} />
+                <span className="slider-title">Temperature</span>
               </div>
-              <div className="relative">
+              <div>
                 <input
                   type="range"
                   min="0"
                   max="100"
                   value={temperature}
                   onChange={(e) => setTemperature(Number(e.target.value))}
-                  className="w-full h-2 bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 rounded-lg appearance-none cursor-pointer"
-                  style={{
-                    background: `linear-gradient(to right, #3b82f6 0%, #8b5cf6 50%, #ef4444 100%)`
-                  }}
+                  className="slider-input temperature-slider"
                 />
-                <div className="flex justify-between text-sm text-purple-300 mt-1">
+                <div className="slider-labels">
                   <span>Cool</span>
                   <span>Hot</span>
                 </div>
@@ -258,45 +255,52 @@ const ScentAttributeSelector = () => {
             </div>
 
             {/* Concentration Slider */}
-            <div className="mb-6">
-              <div className="flex items-center gap-3 mb-3">
-                <Droplets className="text-purple-300" size={20} />
-                <span className="text-lg font-medium">Concentration</span>
+            <div className="slider-section">
+              <div className="slider-header">
+                <Droplets className="slider-icon" size={20} />
+                <span className="slider-title">Concentration</span>
               </div>
-              <div className="relative">
+              <div>
                 <input
                   type="range"
                   min="0"
                   max="100"
                   value={concentration}
                   onChange={(e) => setConcentration(Number(e.target.value))}
-                  className="w-full h-2 bg-purple-600 rounded-lg appearance-none cursor-pointer"
+                  className="slider-input concentration-slider"
                 />
-                <div className="flex justify-between text-sm text-purple-300 mt-1">
+                <div className="slider-labels">
                   <span>Light</span>
                   <span>Intense</span>
                 </div>
               </div>
             </div>
+
+            <button
+              onClick={generateScent}
+              className="generate-button"
+            >
+              Find Matching Scent
+            </button>
           </div>
 
           {/* Right Column - Results */}
-          <div className="bg-purple-800 rounded-lg p-6 border border-purple-600">
+          <div className="results-panel">
             <div className="mb-6">
               <BottleSVG />
             </div>
             
             {generatedScent ? (
               <div>
-                <h2 className="text-2xl font-bold mb-4">{generatedScent.name}</h2>
-                <p className="text-purple-200 text-sm leading-relaxed">
+                <h3>{generatedScent.name}</h3>
+                <p className="results-description">
                   {generatedScent.description}
                 </p>
               </div>
             ) : (
-              <div className="text-center text-purple-400">
-                <p className="mb-2">No matching scent found</p>
-                <p className="text-sm">Try selecting different attributes</p>
+              <div className="no-results">
+                <p>No matching scent found</p>
+                <p>Try selecting different attributes</p>
               </div>
             )}
           </div>
@@ -306,4 +310,4 @@ const ScentAttributeSelector = () => {
   );
 };
 
-export default ScentAttributeSelector;
+export default CraftingTable;

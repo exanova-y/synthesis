@@ -3,6 +3,7 @@ import Landing from './pages/landing'
 import ThreeDGraph from './pages/3DGraph'
 import GenerateScents from './pages/generateScents'
 import ConnectDiffuser from './pages/connectDiffuser'
+import CraftingTablePage from './pages/CraftingTablePage'
 import './App.css'
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Route path="/" element={<Landing />} />
       <Route path="/graph" element={<ThreeDGraph />} />
       <Route path="/generate" element={<GenerateScents />} />
+      <Route path="/craft" element={<CraftingTablePage />} />
       <Route path="/sensor" element={<GenerateScents sensorMode={true} />} />
       <Route path="/diffuser" element={<ConnectDiffuser />} />
       <Route path="*" element={

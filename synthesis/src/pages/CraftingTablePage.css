@@ -1,0 +1,74 @@
+.crafting-table-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e3a8a 100%);
+  color: white;
+}
+
+.page-content {
+  padding-top: 2rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 2rem;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #a855f7, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  color: #c4b5fd;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure CraftingTable component styles are preserved */
+.crafting-table-page .crafting-table-container {
+  background: transparent;
+}
+
+/* Add subtle glassmorphism effect to the crafting area */
+.crafting-table-page .crafting-table-container > div {
+  background: rgba(139, 92, 246, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Enhance button hover effects */
+.crafting-table-page button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+}
+
+/* Add subtle animation to the page */
+.crafting-table-page {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
