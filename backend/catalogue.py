@@ -85,3 +85,115 @@ inventory_as_list = ["Rosemary", "Eucalyptus", "Bergamot", "Lemon", "Peppermint"
 "Vanilla", "Cardamom", "Frankincense", "Sandalwood", "Patchouli", 
 "Lavender", "Gardenia", "Rose", "Jasmin", "Geranium",
 "Pine", "Cedarwood", "Oakmoss", "Black Pepper", "Cinnamon"]  
+
+
+
+# ── UC-Davis Wine “Aroma Wheel” ──────────────────────────────────────────────
+aroma_wheel = {
+    "fruity": {
+        "citrus":          ["Grapefruit", "Lemon"],
+        "berry":           ["Blackberry", "Raspberry", "Strawberry",
+                            "Black Currant (Cassis)"],
+        "tree_fruit":      ["Cherry", "Apricot", "Peach", "Apple"],
+        "tropical_fruit":  ["Pineapple", "Melon", "Banana"],
+        "dried_fruit":     ["Strawberry Jam", "Raisin", "Prune", "Fig"],
+        "other":           ["Artificial Fruit", "Methyl Anthranilate"]
+    },
+
+    "spice": {
+        "spicy":           ["Licorice/Anise", "Black Pepper", "Cloves"]
+    },
+
+    "floral": {
+        "floral":          ["Geranium", "Violet", "Rose", "Orange Blossom"]
+    },
+
+    "microbiological": {
+        "yeasty":          ["Leesy", "Baker’s Yeast"],
+        "lactic":          ["Yogurt", "Sweaty", "Sauerkraut"],
+        "other":           ["Mousy", "Horsey"]
+    },
+
+    "oxidized": {
+        "oxidized":        ["Oxidized"]         # sherry/acetaldehyde notes
+    },
+
+    "pungent": {
+        "cool":            ["Menthol"],
+        "hot":             ["Alcohol"]
+    },
+
+    "vegetative": {
+        "fresh":           ["Cut Green Grass", "Bell Pepper", "Eucalyptus",
+                            "Mint"],
+        "canned_cooked":   ["Green Beans", "Asparagus", "Green Olive",
+                            "Black Olive", "Artichoke"],
+        "dried":           ["Hay/Straw", "Tea", "Tobacco"]
+    },
+
+    "nutty": {
+        "nutty":           ["Walnut", "Hazelnut", "Almond"]
+    },
+
+    "caramelized": {
+        "caramel":         ["Honey", "Butterscotch", "Diacetyl (Butter)",
+                            "Soy Sauce", "Chocolate", "Molasses"]
+    },
+
+    "woody": {
+        "burned":          ["Smoky", "Burnt Toast/Charred", "Coffee"],
+        "phenolic":        ["Medicinal", "Phenolic", "Bacon"],
+        "resinous":        ["Oak", "Cedar", "Vanilla"]
+    },
+
+    "earthy": {
+        "moldy":           ["Moldy Cork", "Moldy", "Musty (Mildew)",
+                            "Mushroom"],
+        "earthy":          ["Dusty"]
+    },
+
+    "chemical": {
+        "pungent":         ["Sulfur Dioxide", "Ethanol", "Acetic Acid",
+                            "Ethyl Acetate"],
+        "papery":          ["Wet Cardboard", "Filter Pad"],
+        "sulfur":          ["Wet Wool/Wet Dog", "Sulfur Dioxide",
+                            "Burnt Match", "Cabbage", "Skunk", "Garlic",
+                            "Hydrogen Sulfide", "Natural Gas (Mercaptan)",
+                            "Rubbery"],
+        "petroleum":       ["Diesel", "Kerosene", "Plastic", "Tar"]
+    }
+}
+
+# flat list of every specific descriptor (duplicates removed)
+flat_descriptors = sorted(
+    {note for sub in aroma_wheel.values() for cat in sub.values() for note in cat}
+)
+
+
+def get_trait_centroid(selected_traits, embedding_function):
+    """
+    Convert selected traits to embedding centroid using UC Davis wheel expansion
+    
+    Example: ['fruity', 'spicy'] → ['sweet', 'fresh', 'juicy', 'warm', 'pungent', 'hot']
+    Then average embeddings of expanded descriptors to get centroid
+    """
+    import numpy as np
+    
+    # Expand traits using mapping
+    expanded_descriptors = []
+    for trait in selected_traits:
+        if trait in trait_mapping:
+            expanded_descriptors.extend(trait_mapping[trait])
+        else:
+            expanded_descriptors.append(trait)
+    
+    # Remove duplicates while preserving order
+    unique_descriptors = list(dict.fromkeys(expanded_descriptors))
+    
+    # Get embeddings for each descriptor
+    embeddings = [embedding_function(desc) for desc in unique_descriptors]
+    
+    # Calculate centroid
+    centroid = np.mean(embeddings, axis=0)
+    
+    return centroid, unique_descriptors

@@ -1,6 +1,8 @@
 import csv
 import json
 import colorsys
+from embedding import setup_encoder, get_catalog_embeddings, pca_on_singular_embedding
+import numpy as np
 
 def load_nodes(csv_path, limit=150):
     """Load first N nodes from CSV"""
@@ -32,25 +34,25 @@ def generate_category_colors():
     # this is mostly gray for now, I need to fix it
 
     category_colors = {
-        'Bakery/Dessert/Snack': '#FED7C3',      # Chocolate
-        'Beverage Alcoholic': '#FFAEA5',        # Dark Red
-        'Cereal/Crop/Bean': '#97C1A9',          # Goldenrod
-        'Dairy': '#F6EAC2',                     # Beige
-        'Fruit': '#ECDFE3',                     # Tomato
-        'Meat/Animal Product': '#FFDBCC',       # Saddle Brown
-        'Plant/Vegetable': '#CCE2CB',           # Forest Green
-        'Seafood': '#C6DBDA',                   # Steel Blue
-        'Nut/Seed': '#A0522D',                  # Sienna
-        'Spice': '#FF4500',                     # Orange Red
-        'Sauce/Powder/Dressing': '#9932CC',     # Dark Orchid
-        'Fungus': '#8FBC8F',                    # Dark Sea Green
-        'Flower': '#F3B0C3',                    # Hot Pink
-        'Dish/End Product': '#696969',          # Dim Gray
-        'Beverage Non-Alcoholic': '#00CED1',    # Dark Turquoise
-        'Fat/Oil': '#FFFFB5',                   # Gold
-        'Herb': '#B6CFB6',                      # Lime Green
-        'Sweetener': '#FFB6C1',                 # Light Pink
-        'Other': '#808080'                      # Gray (default)
+        'Bakery/Dessert/Snack': '#FFF5BA',      
+        'Beverage Alcoholic': '#FFABAB',        
+        'Cereal/Crop/Bean': '#FFCBC1',          
+        'Dairy': '#FFFFD1',                     
+        'Fruit': '#D5AAFF',                     
+        'Meat/Animal Product': '#FFBEBC',       
+        'Plant/Vegetable': '#BFFCC6',           
+        'Seafood': '#85E3FF',                   
+        'Nut/Seed': '#F3FFE3',                  
+        'Spice': '#E87300',                     
+        'Sauce/Powder/Dressing': '#BEA6A1',     
+        'Fungus': '#D5CABD',                    
+        'Flower': '#FFCD61',                    
+        'Dish/End Product': '#685989',          
+        'Beverage Non-Alcoholic': '#FF9F7A',    
+        'Fat/Oil': '#F9F871',                       
+        'Herb': '#AFF8DB',                      
+        'Sweetener': '#FEFEDF',                 
+        'Other': '#FCF7FF'                      
     }
     return category_colors
 
@@ -114,6 +116,30 @@ def build_graph(nodes, edges):
         graph[target].append(source)
     return graph
 
+def nodes_to_embeddings(nodes):
+    """Convert node names to embeddings and reduce with PCA"""
+    print("Setting up encoder...")
+    client = setup_encoder()
+    
+    # Extract node names for embedding
+    node_names = [node['name'] for node in nodes]
+    print(f"Getting embeddings for {len(node_names)} nodes...")
+    
+    # Get embeddings
+    embeddings = get_catalog_embeddings(client, node_names)
+    
+    # Apply PCA to reduce to 3D coordinates
+    print("Applying PCA reduction...")
+    pca_coords = pca_on_singular_embedding(3, embeddings)
+    
+    # Add coordinates to nodes
+    for i, node in enumerate(nodes):
+        node['x'] = float(pca_coords[i, 0])
+        node['y'] = float(pca_coords[i, 1]) 
+        node['z'] = float(pca_coords[i, 2])
+    
+    return nodes, pca_coords
+
 def main():
     # File paths
     nodes_path = '../data-layer/nodes_191120.csv'
@@ -138,6 +164,9 @@ def main():
     print("Assigning colors based on categories...")
     color_assignments, category_counts = assign_colors_by_category(nodes, categories)
     
+    print("Converting nodes to embeddings...")
+    nodes, pca_coords = nodes_to_embeddings(nodes)
+    
     # Create output data with color, transparent, and opacity like 3DGraph.jsx
     output_data = []
     for node in nodes:
@@ -150,6 +179,9 @@ def main():
             'is_hub': node['is_hub'],
             'category': assignment['category'],
             'color': assignment['color'],
+            'x': node['x'],
+            'y': node['y'],
+            'z': node['z'],
             'transparent': True,
             'opacity': 0.85 if node['is_hub'] else 0.75  # Hubs slightly more opaque
         }
