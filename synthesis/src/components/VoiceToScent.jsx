@@ -22,8 +22,7 @@ function VoiceToScent() {
   return (
     <div className="describe-scent">
       <header>
-        <h2>Describe a Scent</h2>
-        <p>Use your voice to describe a scent and find matching fragrances</p>
+        <p><strong>Describe a Scent</strong></p>
       </header>
 
       <main>
@@ -31,17 +30,14 @@ function VoiceToScent() {
         
         {transcript && (
           <div className="transcript-display">
-            <h3>Live Transcript:</h3>
             <p>{transcript}</p>
           </div>
         )}
         
         {match && (
           <div className="match-result">
-            <h3>✨ Matched Scent</h3>
             <div className="match-card">
-              <h4>{match.name}</h4>
-              <p><strong>Description:</strong> {match.description}</p>
+              <p>{match.description}</p>
             </div>
           </div>
         )}

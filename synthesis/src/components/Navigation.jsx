@@ -5,7 +5,6 @@ const Navigation = ({ currentPath }) => {
   const navigate = useNavigate();
   
   const routes = [
-    { path: '/craft', label: 'Craft table' },
     { path: '/graph', label: 'Explore graph' },
     { path: '/generate', label: 'Generate scents' },
     { path: '/sensor', label: 'Connect to sensor' },
