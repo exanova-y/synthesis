@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import 'aframe';
 import ForceGraphVR from 'react-force-graph-vr';
 import * as THREE from 'three';
-import nodes_with_colors from '../../../data-layer/nodes_with_colors.json';
+import nodes_with_colors from '../../../data-layer/nodes_with_colors_v2.json';
 import './3DGraph.css';
 
 // Simple utility to generate a random tree similar to https://github.com/vasturiano/force-graph/blob/master/example/random-data.js

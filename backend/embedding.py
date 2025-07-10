@@ -41,14 +41,13 @@ def most_similar_to(v_query: np.ndarray, v_embeddings: np.ndarray):
     max_similarity_index = int(np_max_similarity_index)  # cast numpy.int64 to plain int for JSON serialization
     return max_similarity_index
 
-def pca_on_singular_embedding(n_axes: int, embedding: np.ndarray):
+def pca_on_list_of_embeddings(n_axes: int, embeddings: np.ndarray):
     # singular embedding
     pca = PCA(n_components=n_axes)
-    reduced_embeddings = pca.fit_transform(embedding)
-    most_significant_three = pca.explained_variance_ratio_
-    # print(f"Most significant three: {most_significant_three}")
-    # print(f"Total variance explained: {most_significant_three.sum():.3f}")
-    return most_significant_three
+    list_of_xyz = []
+    print("the shape of embeddings is", embeddings.shape) # n rows. 1536 columns, usually.
+    reduced_embeddings = pca.fit_transform(embeddings)
+    return reduced_embeddings
 
 if __name__ == "__main__":
     print('setting up encoder')
@@ -56,9 +55,9 @@ if __name__ == "__main__":
     print('getting catalog embeddings')
     catalog_embeddings = get_catalog_embeddings(client, inventory_as_list)
     print('getting query embeddings')
-    query_embedding = get_query_embeddings(client, "Inquiline Kea")
+    query_embedding = get_query_embeddings(client, "marble bread")
     print('finding max similarity index')
     max_similarity_index = most_similar_to(query_embedding, catalog_embeddings)
     print('running pca')
-    most_significant_three = pca_on_singular_embedding(3, catalog_embeddings)
-    print(max_similarity_index, "the item is", inventory_as_list[max_similarity_index-1], "the list of embeddings produced is", most_significant_three) # 0-indexing.
+    three_significant_values = pca_on_singular_embedding(3, catalog_embeddings)
+    print(max_similarity_index, "the item is", inventory_as_list[max_similarity_index-1], "the list of embeddings produced is", three_significant_values) # 0-indexing.

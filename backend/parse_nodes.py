@@ -1,7 +1,7 @@
 import csv
 import json
 import colorsys
-from embedding import setup_encoder, get_catalog_embeddings, pca_on_singular_embedding
+from embedding import setup_encoder, get_catalog_embeddings, pca_on_list_of_embeddings
 import numpy as np
 
 def load_nodes(csv_path, limit=150):
@@ -117,39 +117,45 @@ def build_graph(nodes, edges):
     return graph
 
 def nodes_to_embeddings(nodes):
-    """Convert node names to embeddings and reduce with PCA"""
+    """Convert node names to embeddings and attach scaled x, y, z coordinates."""
     print("Setting up encoder...")
     client = setup_encoder()
-    
+
     # Extract node names for embedding
     node_names = [node['name'] for node in nodes]
-    print(f"Getting embeddings for {len(node_names)} nodes...")
-    
-    # Get embeddings
+    print(f"Embedding {len(node_names)} node names...")
     embeddings = get_catalog_embeddings(client, node_names)
+
+    # Dimensionality reduction
+    print("Running PCA (3 components)...")
+    list_of_coordinates = pca_on_list_of_embeddings(3, embeddings)  
+    print("list of coordinates", list_of_coordinates)
+    # shape: (n_nodes, 3)
     
-    # Apply PCA to reduce to 3D coordinates
-    print("Applying PCA reduction...")
-    pca_coords = pca_on_singular_embedding(3, embeddings)
+    # Scale coordinates for 3D visualization
+    scale_factor = 10
     
-    # Add coordinates to nodes
+    # Add scaled coordinates to nodes. need to use 'i' to access coordinates of each node rather than the same one.
     for i, node in enumerate(nodes):
-        node['x'] = float(pca_coords[i, 0])
-        node['y'] = float(pca_coords[i, 1]) 
-        node['z'] = float(pca_coords[i, 2])
-    
-    return nodes, pca_coords
+        
+        node['x'] = float(list_of_coordinates[i][0] * scale_factor)
+        node['y'] = float(list_of_coordinates[i][1] * scale_factor) 
+        node['z'] = float(list_of_coordinates[i][2] * scale_factor)
+        if i < 3:  # Print first few for debugging
+            print(f"Node {i}: x={node['x']:.2f}, y={node['y']:.2f}, z={node['z']:.2f}")
+
+    return nodes
 
 def main():
     # File paths
     nodes_path = '../data-layer/nodes_191120.csv'
     edges_path = '../data-layer/edges_191120.csv'
     categories_path = '../data-layer/dict_ingr2cate - Top300+FDB400+HyperFoods104=616.csv'
-    output_path = '../data-layer/nodes_with_colors.json'
+    output_path = '../data-layer/nodes_with_colors_v2.json'
     
-    # Load data
+
     print("Loading nodes...")
-    nodes = load_nodes(nodes_path, 150)
+    nodes = load_nodes(nodes_path, 100)
     node_ids = [node['id'] for node in nodes]
     
     print("Loading edges...")
@@ -165,12 +171,12 @@ def main():
     color_assignments, category_counts = assign_colors_by_category(nodes, categories)
     
     print("Converting nodes to embeddings...")
-    nodes, pca_coords = nodes_to_embeddings(nodes)
+    nodes = nodes_to_embeddings(nodes)
     
     # Create output data with color, transparent, and opacity like 3DGraph.jsx
     output_data = []
     for node in nodes:
-        assignment = color_assignments.get(node['id'], {'color': '#FF0000', 'category': 'Other'})
+        assignment = color_assignments.get(node['id'], {'color': '#FF0000', 'category': ''})
         
         node_data = {
             'id': node['id'],
@@ -183,7 +189,7 @@ def main():
             'y': node['y'],
             'z': node['z'],
             'transparent': True,
-            'opacity': 0.85 if node['is_hub'] else 0.75  # Hubs slightly more opaque
+            'opacity': 0.95 if node['is_hub'] else 0.65  # Hubs slightly more opaque
         }
         output_data.append(node_data)
     
